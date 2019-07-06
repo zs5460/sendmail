@@ -1,0 +1,27 @@
+language: go
+
+go:
+  - master
+
+before_install:
+  - go get -t -v ./...
+
+script:
+  - go test -v ./...
+
+before_deploy:
+  - GOARCH=amd64 GOOS=linux   go build -o sendmail
+  - GOARCH=amd64 GOOS=windows go build -o sendmail.exe
+  - zip -r sendmail-linux-amd64.zip sendmail config.json.sample
+  - zip -r sendmail-windows-amd64.zip sendmail.exe config.json.sample
+
+
+deploy:
+  provider: releases
+  api_key: "${GH_TOKEN}"
+  file: 
+    - sendmail-linux-amd64.zip
+    - sendmail-windows-amd64.zip
+  skip_cleanup: true
+  on:
+    tags: true

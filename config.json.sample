@@ -1,0 +1,7 @@
+{
+    "MailSubject": "",
+    "MailServer": "smtp.exmail.qq.com:25",
+    "MailSender": "",
+    "MailSenderPwd": "",
+    "MailReciver": ""
+}

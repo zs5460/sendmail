@@ -4,6 +4,10 @@
 
 sendmail是一个发送邮件的命令行小工具。
 
+## 下载
+
+[最新版](https://github.com/zs5460/sendmail/releases/latest)
+
 ## 配置
 
 将config.json.sample改名为config.json，填入相关信息。

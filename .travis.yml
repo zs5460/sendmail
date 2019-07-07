@@ -13,3 +13,5 @@ deploy:
     - sendmail-linux-amd64.zip
     - sendmail-windows-amd64.zip
   skip_cleanup: true
+  on:
+    tags: true
